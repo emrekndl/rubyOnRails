@@ -1,0 +1,26 @@
+ <%= form_for([@kitap, @kitap.yorums.build]) do |f| %>
+ <table class="table table-hover">
+   <tr class="table-secondary">
+     <td>  <p>
+         <%= f.label :isim %>
+         <%= f.text_field :isim %>
+       </p>
+     </td>
+     </tr>
+     <tr class="table-secondary">
+     <td>
+       <p>
+       <%= f.label :mesaj %>
+       <%= f.text_field :mesaj %>
+     </p>
+   </td>
+   </tr>
+   <tr class="table-secondary">
+     <td>
+       <p>
+         <%= f.submit %>
+       </p>
+     </td>
+   </tr>
+</table>
+<% end %>

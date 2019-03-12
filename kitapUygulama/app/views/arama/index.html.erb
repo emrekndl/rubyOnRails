@@ -1,0 +1,16 @@
+<h1>Arama#index</h1>
+<%=@q%>
+<br>
+<table>
+    <% @kitaplar.each do |kitap| %>
+      <tr>
+        <td><%= kitap.isim %></td>
+        <td><%= kitap.sayfa %></td>
+        <td><%= link_to 'Show', kitap %></td>
+        <td> <%= image_tag kitap.resim.url(:thumb) if kitap.resim? %> </td>
+        <td><%= link_to 'Edit', edit_kitap_path(kitap) %></td>
+        <td><%= link_to 'Destroy', kitap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+</table>
+<p>Find me in app/views/arama/index.html.erb</p>

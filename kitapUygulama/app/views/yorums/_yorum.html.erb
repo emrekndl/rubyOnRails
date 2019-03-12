@@ -1,0 +1,21 @@
+<table class="table table-hover">
+
+
+<div class="comment clearfix">
+  <div class="comment_content">
+    <tr class="table-light">
+      <td>  <p class="comment_name"> <%= yorum.isim %> </p></td>
+    </tr>
+    <tr class="table-light">
+      <td>    <p class="comment_time"> <%= yorum.mesaj %> </p></td>
+    </tr>
+    <tr class="table-light">
+      <td>  <p class="comment_body"> <%= time_ago_in_words(yorum.created_at) %> Ago. </p></td>
+    </tr>
+
+
+
+  </div>
+
+</div>
+</table>

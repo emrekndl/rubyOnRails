@@ -1,0 +1,35 @@
+<div class=" jumbotron lead">
+
+
+<p id="notice"><%= notice %></p>
+
+<h1><%= t 'kitaps'%></h1>
+<%= t 'welcome'%>
+<table class="table table-hover">
+
+    <tr>
+      <th class="table-dark"><%= t 'name' %></th>
+      <th class="table-dark"><%= t 'page' %></th>
+      <th class="table-dark" colspan="5"></th>
+    </tr>
+
+  <tbody>
+    <% @kitaps.each do |kitap| %>
+      <tr class="table-info">
+        <td style='vertical-align:middle'><%= kitap.isim %></td>
+        <td style='vertical-align:middle'><%= kitap.sayfa %></td>
+        <td style='vertical-align:middle'><%= kitap.user.email %></td>
+        <td style='vertical-align:middle'> <%= image_tag kitap.resim.url(:thumb) if kitap.resim? %> </td>
+        <td style='vertical-align:middle'><%= link_to (I18n.t 'show'), kitap, :class => 'btn btn-primary', :style=> "text-decoration:none;" %> </td>
+        <td style='vertical-align:middle'><%= link_to (I18n.t 'edit'), edit_kitap_path(kitap), :class => 'btn btn-warning', :style=> "text-decoration:none;" %></td>
+        <td style='vertical-align:middle'><%= link_to (I18n.t 'destroy'), kitap, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger', :style=> "text-decoration:none;" %></td>
+      </tr>
+      <br>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to (I18n.t'new'), new_kitap_path, html_options = { :class=>"btn btn-success", :style=> "color:white; text-decoration:none;" } %>
+</div>
